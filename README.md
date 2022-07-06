@@ -20,7 +20,7 @@
 
 1. Clonar o repositório:
 ```sh
-git clone https://github.com/opiagile/micro-admin-videos-java.git
+git clone https://github.com/opiagile/micro-admin-videos-java-master.git
 ```
 
 2. Subir o banco de dados MySQL com Docker:
