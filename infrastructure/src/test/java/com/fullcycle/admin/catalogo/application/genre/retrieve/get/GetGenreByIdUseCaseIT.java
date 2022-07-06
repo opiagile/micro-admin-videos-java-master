@@ -54,7 +54,7 @@ public class GetGenreByIdUseCaseIT {
         Assertions.assertEquals(expectedIsActive, actualGenre.isActive());
         Assertions.assertTrue(
                 expectedCategories.size() == actualGenre.categories().size()
-                        && expectedCategories.containsAll(actualGenre.categories())
+                        && asString(expectedCategories).containsAll(actualGenre.categories())
         );
         Assertions.assertEquals(aGenre.getCreatedAt(), actualGenre.createdAt());
         Assertions.assertEquals(aGenre.getUpdatedAt(), actualGenre.updatedAt());
