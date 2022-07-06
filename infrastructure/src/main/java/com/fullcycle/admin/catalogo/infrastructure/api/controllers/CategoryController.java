@@ -53,7 +53,7 @@ public class CategoryController implements CategoryAPI {
         final var aCommand = CreateCategoryCommand.with(
                 input.name(),
                 input.description(),
-                input.active() != null ? input.active() : true
+                input.isActive()
         );
 
         final Function<Notification, ResponseEntity<?>> onError = notification ->
@@ -89,7 +89,7 @@ public class CategoryController implements CategoryAPI {
                 id,
                 input.name(),
                 input.description(),
-                input.active() != null ? input.active() : true
+                input.isActive()
         );
 
         final Function<Notification, ResponseEntity<?>> onError = notification ->
@@ -104,6 +104,7 @@ public class CategoryController implements CategoryAPI {
 
     @Override
     public void deleteById(final String anId) {
+
         this.deleteCategoryUseCase.execute(anId);
     }
 }
