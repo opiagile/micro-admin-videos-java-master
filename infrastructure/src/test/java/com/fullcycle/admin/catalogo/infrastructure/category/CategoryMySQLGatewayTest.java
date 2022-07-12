@@ -327,8 +327,8 @@ public class CategoryMySQLGatewayTest {
     }
 
     @Test
-    public void givenPrePersistedCategories_whenCallsExistsById_shouldReturnIds() {
-        //given
+    public void givenPrePersistedCategories_whenCallsExistsByIds_shouldReturnIds() {
+        // given
         final var filmes = Category.newCategory("Filmes", "A categoria mais assistida", true);
         final var series = Category.newCategory("Séries", "Uma categoria assistida", true);
         final var documentarios = Category.newCategory("Documentários", "A categoria menos assistida", true);
@@ -347,7 +347,7 @@ public class CategoryMySQLGatewayTest {
 
         final var ids = List.of(filmes.getId(), series.getId(), CategoryID.from("123"));
 
-        //when
+        // when
         final var actualResult = categoryGateway.existsByIds(ids);
 
         Assertions.assertEquals(expectedIds, actualResult);
