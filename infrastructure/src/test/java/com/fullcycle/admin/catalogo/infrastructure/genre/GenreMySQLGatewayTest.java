@@ -132,7 +132,7 @@ public class GenreMySQLGatewayTest {
         final var expectedIsActive = true;
         final var expectedCategories = List.of(filmes.getId(), series.getId());
 
-        final var aGenre = Genre.newGenre("ac", expectedIsActive);
+        final var aGenre = Genre.newGenre("acti", expectedIsActive);
 
         final var expectedId = aGenre.getId();
 
@@ -140,7 +140,7 @@ public class GenreMySQLGatewayTest {
 
         genreRepository.saveAndFlush(GenreJpaEntity.from(aGenre));
 
-        Assertions.assertEquals("ac", aGenre.getName());
+        Assertions.assertEquals("acti", aGenre.getName());
         Assertions.assertEquals(0, aGenre.getCategories().size());
 
         // when
@@ -184,7 +184,7 @@ public class GenreMySQLGatewayTest {
         final var expectedIsActive = true;
         final var expectedCategories = List.<CategoryID>of();
 
-        final var aGenre = Genre.newGenre("ac", expectedIsActive);
+        final var aGenre = Genre.newGenre("acti", expectedIsActive);
         aGenre.addCategories(List.of(filmes.getId(), series.getId()));
 
         final var expectedId = aGenre.getId();
@@ -193,7 +193,7 @@ public class GenreMySQLGatewayTest {
 
         genreRepository.saveAndFlush(GenreJpaEntity.from(aGenre));
 
-        Assertions.assertEquals("ac", aGenre.getName());
+        Assertions.assertEquals("acti", aGenre.getName());
         Assertions.assertEquals(2, aGenre.getCategories().size());
 
         // when
